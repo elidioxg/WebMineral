@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel='stylesheet' type='text/css' href='./public_html/css/sytle.css'>
+        <meta name="author" content="exg" >
+	<meta name="description" content="Open-Source Softwares for Geosciences">
+	<meta name="keywords" content="geology, geoscience, software, open, source">
+        <title>Mineral Database</title>
     </head>
     <body>
+        Teste Index 2
         <table>
             <tr>
                 <td colspan="2">
@@ -18,7 +18,7 @@ and open the template in the editor.
             </tr>
             <tr>
                 <td colspan="1">
-                    <?php require_once './public_html/table.php'; ?>
+                    <?php //require_once './public_html/table.php'; ?>
                 </td>
                 <td>
                   <?php require_once './public_html/rightpanel.php'; ?>

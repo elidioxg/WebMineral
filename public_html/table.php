@@ -1,12 +1,11 @@
 <?php
-
-  include_once("./resources/constants.php");
+  include_once("../resources/constants.php");
    
   header('Content-Type: text/html; charset=UTF-8');
-  $connection = mysql_connect(local, user, passwd) or print (mysql_error());
   
+  $connection = mysql_connect(localhost, user, passwd) or print(mysql_error());
   mysql_select_db(database, $connection) or print mysql_error();
-   
+  echo "test 2";
   mysql_query("SET NAMES 'utf8'");
   mysql_query("SET character_set_connection=utf8");
   mysql_query("SET character_set_client=utf8");

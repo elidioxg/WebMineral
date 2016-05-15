@@ -7,6 +7,7 @@
  */
 echo "  <div id='footer'>";
 echo "  </div>";
+echo "  <script src='./js/javascript.js'></script>";
 echo "</body>";
 echo "</html>";
 

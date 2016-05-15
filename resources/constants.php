@@ -1,9 +1,9 @@
 <?php
 
-  define("database","mineralogy");
+  define("database","minerals");
   define("table","optical");
   define("tableimage","images");
-  define("user","root");
+  define("user","elidioxg");
   define("passwd","");
   define("local", "localhost");
   define("field1", "name");

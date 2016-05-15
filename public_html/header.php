@@ -9,10 +9,11 @@
   echo "<html>";
   echo "<head>";
   echo "  <title>";
-  echo "";
+  echo "  <link rel='stylesheet' type='text/css' href='./css/sytle.css'>";
   echo "  </title>";
   echo "</head>";
   echo "<body>";
+  echo "Teste HEADER";
   echo "  <div id='header'>";
   echo "    <h1>";
   echo "    </h1>";
