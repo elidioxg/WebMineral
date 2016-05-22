@@ -3,30 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <link rel='stylesheet' type='text/css' href='./public_html/css/sytle.css'>
-        <meta name="author" content="exg" >
+        <script src="./public_html/js/javascript.js" type="text/javascript"></script>
+        <meta name="author" content="elidioxg" >
 	<meta name="description" content="Open-Source Softwares for Geosciences">
 	<meta name="keywords" content="geology, geoscience, software, open, source">
         <title>Mineral Database</title>
     </head>
     <body>
-        Teste Index 2
-        <table>
+        <table >
             <tr>
                 <td colspan="2">
-                    <?php require_once './public_html/header.php'; ?>
+                    <?php include './public_html/header.php'; ?>
                 </td>                
             </tr>
             <tr>
                 <td colspan="1">
-                    <?php //require_once './public_html/table.php'; ?>
+                    <?php include './public_html/intro.php'; ?>
                 </td>
                 <td>
-                  <?php require_once './public_html/rightpanel.php'; ?>
+                    <?php include './public_html/rightpanel.php'; ?>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <?php require_once './public_html/footer.php'; ?>
+                    <?php include './public_html/footer.php'; ?>
                 </td>
             </tr>
         </table>

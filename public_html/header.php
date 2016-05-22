@@ -1,26 +1,25 @@
-<?php
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='./css/sytle.css'>
+        <title> Optical Properties  </title>
+    </head>
+    <body>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-  echo "<html>";
-  echo "<head>";
-  echo "  <title>";
-  echo "  <link rel='stylesheet' type='text/css' href='./css/sytle.css'>";
-  echo "  </title>";
-  echo "</head>";
-  echo "<body>";
-  echo "Teste HEADER";
-  echo "  <div id='header'>";
-  echo "    <h1>";
-  echo "    </h1>";
-  echo "    <ul class='nav'>";
-  echo "      <li>";
-  echo "        <a href=''>Home</a>";
-  echo "      </li>";
-  echo "    </ul>";
-  echo "  </div>";
-?>
+        <div id="header">
+            <h1>
+            </h1>
+            <ul  id='horizontal_list'>
+                <li>
+                    <a href='./public_html/table_general.php'>General Properties</a>
+                </li>
+                <li>
+                    <a href='./public_html/table_physical.php' >Physical Properties</a>
+                </li>
+                <li><!-- TODO: substituir por constante de diretorio raiz-->
+                    <a href='./public_html/table_optic.php' >Optical Properties</a>
+                </li>
+                <li>
+                    <a href=''> Chrystallography</a>
+                </li>
+            </ul>
+        </div>

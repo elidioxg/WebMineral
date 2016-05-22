@@ -30,7 +30,7 @@ label {
     margin-left: 35px;
 }
 body {
-    background-color: aliceblue;
+    background-color:white;
 }
 li a {
     padding: 50px;
@@ -48,7 +48,7 @@ ul#menulist {
 	}
 
 ul#menulist li {
-	display:inline;
+	display:block;
 	margin-right:10px;
 	padding-right:20px;
 	}
@@ -58,12 +58,34 @@ ul#menulist li a {
     	padding: 10px 10px;
     	text-decoration: none;
     	color: #696969;
-  	display: inline;
+  	display: block;
     	vertical-align:top;
 	margin-right:3px;
 }
 
 ul#menulist li a:hover {
+    color: white;
+    background-color: black;
+} 
+
+ul#horizontal_list {
+        padding:10px 10px;
+	margin-bottom:5px;
+	margin-left:10px;
+}
+
+ul#horizontal_list li {
+    display:inline;
+    
+}
+
+ul#horizontal_list li a{
+    display:inline;
+    text-decoration: none;
+    background-color: #ffffff;
+}
+
+ul#horizontal_list li a:hover {
     color: white;
     background-color: black;
 } 
