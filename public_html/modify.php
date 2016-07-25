@@ -1,6 +1,8 @@
 <?php
 
-$valueName = filter_input(INPUT_POST, 'fieldName', FILTER_REQUIRE_ARRAY);
+include "../resources/constants.php";
+
+$valueName = filter_input(INPUT_POST, 'fieldName');
 
 $user = Constants::getUser();
 $local = Constants::getLocal();
@@ -47,14 +49,24 @@ $tableGeneral = Constants::getTableGeneral();
 $tablePhysical = Constants::getTablePhysical();
 $tableOptical = Constants::getTableOptical();
 
+$connection = mysql_connect($local, $user, $passwd) or die(mysql_error());
+
+mysql_select_db($database, $connection) or die(mysql_error());
+
+mysql_query("SET NAMES 'utf8'");
+mysql_query("SET character_set_connection=utf8");
+mysql_query("SET character_set_client=utf8");
+mysql_query("SET character_set_results=utf8");
+
 $sql = "SELECT * FROM $tableGeneral WHERE $name = '$valuename';";
 $result = mysql_query($sql, $connection);
-if ($result != null) {
+$results = mysql_fetch_array($result);
+if (\mysql_num_rows($result) > 0) {    
     echo '<table border="1">';
     echo '<form method="POST" action="insert_data.php">';
     echo '<tr>';
     echo '    <td colspan="4"><label>Name</label>';
-    echo "    <input type='text' name='fieldName' id='fieldName' class='txtin'value='$result[$name]]' ></td>";
+    echo "    <input type='text' name='fieldName' id='fieldName' class='txtin' value='".$results[$name]."' ></td>";
     echo '</tr>';
     echo '<tr>';
     echo '    <td>';
@@ -224,5 +236,7 @@ if ($result != null) {
     echo '</tr>';
     echo '</form>';
     echo '</table>';
+} else {
+    echo "Error. Contact Admin";
 }
 mysql_close($connection);
