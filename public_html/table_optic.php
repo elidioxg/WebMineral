@@ -11,6 +11,7 @@
         <td colspan="4"> 
             <?php
             include("../resources/constants.php");
+            include("../resources/constants_eng.php");
 
             header('Content-Type: text/html; charset=UTF-8');
             $user = Constants::getUser();
@@ -50,47 +51,48 @@
             echo "  <tr>";
 // echo "    <td> Imagem</td>";
             echo "    <td>";
-            echo "Name";
+            echo Strings::getName();
             echo "    </td>";
             echo "    <td>";
-            echo "Optic Sign";
+            echo Strings::getOpticSign();
             echo "    </td>";
             echo "    <td>";
-            echo "Optic Sign Description";
+            echo Strings::getOpticSignDesc();
             echo "    </td>";
             echo "    <td>";
-            echo "Birrefringence";
+            echo Strings::getBirrMax();
             echo "    </td>";
             echo "    <td>";
-            echo "Birrefringence Description";
+            echo Strings::getBirr();
             echo "    </td>";
             echo "    <td>";
-            echo "Refraction Index";
+            echo Strings::getRefraction();
             echo "    </td>";
             echo "    <td>";
-            echo "Color blade";
+            echo Strings::getColorBlade();
             echo "    </td>";
             echo "    <td>";
-            echo "Elongation Sign";
+            echo Strings::getElongation();
             echo "    </td>";
             echo "    <td>";
-            echo "Relief";
+            echo Strings::getRelief();
             echo "    </td>";
             echo "    <td>";
-            echo "Angle 2V";
+            echo Strings::getAngle2V();
             echo "    </td>";
             echo "    <td>";
-            echo "Extinction";
+            echo Strings::getExtinction();
             echo "    </td>";
             echo "    <td>";
-            echo "Interference Color";
+            echo Strings::getInterference();
             echo "    </td>";
             echo "  </tr>";
             while ($results = mysql_fetch_array($result)) {
                 echo "<tr>";
                 echo "  <td>";
                 echo '<form method="POST" action="modify.php">';
-                echo '<input type="submit" value="'.$results[$name].'" name="fieldName">';
+                echo '<input type="submit" value="'.$results[$name].
+                        '" name="fieldName" id="bRecord">';
                 echo '</form>';
                 //echo "    <a href='./descr.php?name=$results[$name]'>$results[$name] </a>";
                 echo "  </td>";

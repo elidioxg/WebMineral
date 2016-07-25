@@ -11,6 +11,7 @@
         <td colspan="4">     
             <?php
             include '../resources/constants.php';
+            include '../resources/constants_eng.php';
             header('Content-Type: text/html; charset=UTF-8');
             $user = Constants::getUser();
             $local = Constants::getLocal();
@@ -41,16 +42,16 @@
 
             echo "<table border='1'>";
             echo "    <tr>";
-            echo "            <td> Name</td> ";
-            echo "            <td> Composition </td>";
-            echo "            <td> Class</td>";
-            echo "            <td> Subclass</td>";
-            echo "            <td> Group</td>";
-            echo "            <td> Subgroup</td>";
-            echo "            <td> Occurrence</td>";
-            echo "            <td> Association</td>";
-            echo "            <td> Distinction</td>";
-            echo "            <td> Applications</td>";
+            echo "            <td>".Strings::getName()."</td> ";
+            echo "            <td> ".Strings::getComposition()." </td>";
+            echo "            <td> ".Strings::getClasses()."</td>";
+            echo "            <td> ".Strings::getSubclasses()."</td>";
+            echo "            <td> ".Strings::getGroups()."</td>";
+            echo "            <td> ".Strings::getSubgroups()."</td>";
+            echo "            <td> ".Strings::getOccurrence()."</td>";
+            echo "            <td> ".Strings::getAssociation()."</td>";
+            echo "            <td> ".Strings::getDIstinction()."</td>";
+            echo "            <td> ".Strings::getApplications()."</td>";
             echo "    </tr>";
             while ($results = mysql_fetch_array($result)) {
                 echo "<tr>";

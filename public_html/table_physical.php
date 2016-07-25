@@ -11,6 +11,7 @@
         <td colspan="4"> 
             <?php
             include '../resources/constants.php';
+            include '../resources/constants_eng.php';
             header('Content-Type: text/html; charset=UTF-8');
             $user = Constants::getUser();
             $local = Constants::getLocal();
@@ -31,8 +32,8 @@
             $magnetism = Constants::getMagnetism();
             $luminescence = Constants::getLuminescence();
 
-            $connection = mysql_connect($local, $user, $passwd) or print(mysql_error());
-            mysql_select_db($database, $connection) or print mysql_error();
+            $connection = mysql_connect($local, $user, $passwd) or die(mysql_error());
+            mysql_select_db($database, $connection) or die(mysql_error());
             mysql_query("SET NAMES 'utf8'");
             mysql_query("SET character_set_connection=utf8");
             mysql_query("SET character_set_client=utf8");
@@ -43,18 +44,18 @@
 
             echo "<table border='1'>";
             echo "    <tr>";
-            echo "            <td> Name</td> ";
-            echo "            <td> Minimum Hardness  </td>";
-            echo "            <td> Maximum Hardness </td>";
-            echo "            <td> Minimum Density </td>";
-            echo "            <td> Maximum Density</td>";
-            echo "            <td> Color</td>";
-            echo "            <td> Streak</td>";
-            echo "            <td> Brightness</td>";
-            echo "            <td> Cleavage</td>";
-            echo "            <td> Fracture</td>";
-            echo "            <td> Magnetism</td>";
-            echo "            <td> Luminescence</td>";
+            echo "            <td> ".Strings::getName()."</td> ";
+            echo "            <td> ".Strings::getHardMin()."</td>";
+            echo "            <td> ".Strings::getHardMax()." </td>";
+            echo "            <td> ".Strings::getDensMin()." </td>";
+            echo "            <td> ".Strings::getDensMax()."</td>";
+            echo "            <td> ".Strings::getColor()."</td>";
+            echo "            <td> ".Strings::getStreak()."</td>";
+            echo "            <td> ".Strings::getBright()."</td>";
+            echo "            <td> ".Strings::getCleavage()."</td>";
+            echo "            <td> ".Strings::getFracture()."</td>";
+            echo "            <td> ".Strings::getMagnetism()."</td>";
+            echo "            <td> ".Strings::getLuminescence()."</td>";
             echo "    </tr>";
             while ($results = mysql_fetch_array($result)) {
                 echo "<tr>";
