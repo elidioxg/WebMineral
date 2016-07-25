@@ -82,9 +82,9 @@ $tableGeneral = Constants::getTableGeneral();
 $tablePhysical = Constants::getTablePhysical();
 $tableOptical = Constants::getTableOptical();
 
-$connection = mysql_connect($local, $user, $passwd) or print (mysql_error());
+$connection = mysql_connect($local, $user, $passwd) or die(mysql_error());
 
-mysql_select_db($database, $connection) or print mysql_error();
+mysql_select_db($database, $connection) or die(mysql_error());
 
 mysql_query("SET NAMES 'utf8'");
 mysql_query("SET character_set_connection=utf8");
@@ -100,14 +100,14 @@ if (\mysql_num_rows($result) <= 1) {
             "$distinction, $applications) VALUES ('$valueName', '$valueComp'," .
             "'$valueClass', '$valueSubclass', '$valueGroup', '$valueSubgroup'," .
             "'$valueOccurrence', '$valueAssociation', '$valueDistinction', '$valueApplications')";
-    mysql_query($sql1, $connection) or print(mysql_error());
+    mysql_query($sql1, $connection) or die(mysql_error());
 
     $sql2 = "INSERT INTO $tablePhysical ($name, $hard_min, $hard_max, $dens_min, $dens_max," .
             "$color, $streak, $brightness, $cleavage, $fracture, $magnetism, $luminescence" .
             ") VALUES ('$valueName', '$valueHardMin', '$valueHardMax', '$valueDensMin'," .
             "'$valueDensMax', '$valueColor', '$valueStreak', '$valueBrightness'," .
             "'$valueCleavage', '$valueFracture', '$valueMagnetism', '$valueLuminescence')";
-    mysql_query($sql2, $connection) or print(mysql_error());
+    mysql_query($sql2, $connection) or die(mysql_error());
 
     $sql3 = "INSERT INTO $tableOptical ($name, $sign, $sign_desc, $birr_max," .
             "$birr_desc, $refraction, $color_blade, $elongation, $relief, " .
@@ -115,7 +115,7 @@ if (\mysql_num_rows($result) <= 1) {
             "'$valueSignDesc', '$valueBirrMax', '$valueBirrefringence', '$valueRefraction'," .
             " '$valueColorBlade', '$valueElongation'," .
             "'$valueRelief', '$value2VAngle', '$valueExtinction', '$valueInterference')";
-    mysql_query($sql3, $connection) or print(mysql_error());
+    mysql_query($sql3, $connection) or die(mysql_error());
     echo"<script language='javascript' type='text/javascript'>alert('$fieldName Added'); window.location.href='add.php'</script>";
 } else {
     echo"<script language='javascript' type='text/javascript'>alert('Esta especie ja existe'); window.location.href='add.php'</script>";

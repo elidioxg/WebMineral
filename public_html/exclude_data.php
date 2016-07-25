@@ -1,7 +1,7 @@
 <?php
-
+include '../resources/constants.php';
 $valueName = filter_input(INPUT_POST, 'minerallist');
-echo "<h1> Name: $valueName</h1>";
+
 $user = Constants::getUser();
 $local = Constants::getLocal();
 $passwd = Constants::getPasswd();

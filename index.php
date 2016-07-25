@@ -6,23 +6,24 @@
         <script src="./public_html/js/javascript.js" type="text/javascript"></script>
         <meta name="author" content="elidioxg" >
 	<meta name="description" content="Open-Source Softwares for Geosciences">
-	<meta name="keywords" content="geology, geoscience, software, open, source">
+	<meta name="keywords" 
+              content="geology, geoscience, software, open, source, mineral, minerals">
         <title>Mineral Database</title>
     </head>
     <body>
         <table >
             <tr>
-                <td colspan="2">
+                <td colspan="4">
                     <?php include './public_html/header.php'; ?>
                 </td>                
             </tr>
             <tr>
-                <td colspan="1">
-                    <?php include './public_html/intro.php'; ?>
-                </td>
                 <td>
                     <?php include './public_html/rightpanel.php'; ?>
                 </td>
+                <td colspan="4">
+                    <?php include './public_html/intro.php'; ?>
+                </td>                
             </tr>
             <tr>
                 <td colspan="2">

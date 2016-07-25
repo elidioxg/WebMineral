@@ -1,3 +1,5 @@
+<form method='POST' action='exclude_data.php'>
+<select name='minerallist'>
 <?php
 include '../resources/constants.php';
 header('Content-Type: text/html; charset=UTF-8');
@@ -15,14 +17,15 @@ mysql_query("SET character_set_client=utf8");
 mysql_query("SET character_set_results=utf8");
 $sql = "SELECT $name FROM $table ORDER BY $name ASC;";
 $result = mysql_query($sql, $connection) or die(mysql_error());
-echo "<form method='POST' action='exclude_data.php'>";
-echo "<select name='minerallist'>";
+
 while ($results = mysql_fetch_array($result)) {
     echo "<option value='".$results[$name]."'>".$results[$name]."</option>";
 }
-echo "</select>";
-echo "<input type='submit' value='Delete Selected' name='exclude>' >";
-echo "</form>";
 mysql_close($connection);
+?>
+  </select>
+  <input type='submit' value='Delete Selected' name='exclude>' >
+</form>
+
 
 
